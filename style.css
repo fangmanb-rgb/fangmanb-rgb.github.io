@@ -33,3 +33,4 @@ form button.btn{border:0;cursor:pointer;margin-top:16px;font:inherit;font-weight
 .opt{font-weight:400;color:var(--muted)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .status{margin-top:12px}
+footer .actions{justify-content:center;margin-bottom:12px}
