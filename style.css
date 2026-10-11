@@ -1,0 +1,28 @@
+:root{--bg:#fafaf9;--card:#fff;--fg:#1c1917;--muted:#78716c;--line:#e7e5e4;--accent:#2563eb;--onacc:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0c0a09;--card:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--line:#292524;--accent:#60a5fa;--onacc:#0c0a09}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+padding:max(20px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));overflow-x:hidden}
+header,main,footer{max-width:760px;margin:0 auto}
+header{padding:12px 0 8px}
+h1{font-size:2rem;line-height:1.15;margin:.2em 0 .25em}
+.headline{font-size:1.1rem;font-weight:600;color:var(--accent);margin:0 0 .4em}
+.sub,.muted{color:var(--muted);margin:0 0 1em}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 18px 14px;margin:16px 0}
+h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:12px 0 8px}
+h3{font-size:1.02rem;margin:0}
+p{margin:0 0 .8em}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:.92rem}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{padding:12px 0 12px 16px;border-left:2px solid var(--line);position:relative}
+.tl li::before{content:"";position:absolute;left:-6px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.when{display:block;color:var(--muted);font-size:.88rem;margin:2px 0 4px}
+.tl p{margin:0;font-size:.95rem}
+.btn{display:inline-block;background:var(--accent);color:var(--onacc);text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;min-height:48px}
+.btn:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+footer{margin-top:24px;text-align:center;font-size:.85rem;color:var(--muted)}
+@media (min-width:700px){h1{font-size:2.6rem}}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
