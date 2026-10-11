@@ -26,3 +26,10 @@ footer{margin-top:24px;text-align:center;font-size:.85rem;color:var(--muted)}
 @media (min-width:700px){h1{font-size:2.6rem}}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
 .btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+form label{display:block;font-weight:600;font-size:.95rem;margin:12px 0 4px}
+form input,form select,form textarea{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px}
+form textarea{min-height:140px;resize:vertical}
+form button.btn{border:0;cursor:pointer;margin-top:16px;font:inherit;font-weight:600}
+.opt{font-weight:400;color:var(--muted)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{margin-top:12px}

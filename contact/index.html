@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Contact Bryan Fangman</title>
+<meta name="description" content="Contact Bryan Fangman: suggest a link or podcast, share an employment opportunity, or reach out about speaking, media or collaboration.">
+<link rel="canonical" href="https://bryanfangman.com/contact/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Bryan Fangman">
+<meta property="og:description" content="Suggest a link or podcast, share an employment opportunity, or reach out about speaking, media or collaboration.">
+<meta property="og:url" content="https://bryanfangman.com/contact/">
+<meta property="og:site_name" content="Bryan Fangman">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@fangmanb">
+<meta name="twitter:title" content="Contact Bryan Fangman">
+<meta name="twitter:description" content="Suggest a link or podcast, share an employment opportunity, or reach out about speaking, media or collaboration.">
+<meta name="color-scheme" content="light dark">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Bryan Fangman","url":"https://bryanfangman.com/contact/","about":{"@type":"Person","name":"Bryan Fangman","url":"https://bryanfangman.com/"}}
+</script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+<h1>Contact</h1>
+<p class="sub">Know a site or podcast worth sharing, have an opportunity, or want to collaborate? Send a note and I'll read it.</p>
+</header>
+<main>
+<section aria-labelledby="form-h">
+<h2 id="form-h">Send a message</h2>
+<!-- FORMSPREE: replace FORM_ID_PENDING below with your Formspree form ID -->
+<form id="contact-form" action="https://formspree.io/f/FORM_ID_PENDING" method="POST">
+<label for="name">Name</label>
+<input id="name" name="name" type="text" autocomplete="name" required>
+<label for="email">Your email</label>
+<input id="email" name="email" type="email" autocomplete="email" required>
+<label for="reason">Reason</label>
+<select id="reason" name="reason" required>
+<option value="Suggest a link" data-key="link">Suggest a link</option>
+<option value="Podcast recommendation" data-key="podcast">Podcast recommendation</option>
+<option value="Employment opportunity" data-key="employment">Employment opportunity</option>
+<option value="Speaking / media" data-key="speaking">Speaking / media</option>
+<option value="Collaboration" data-key="collaboration">Collaboration</option>
+<option value="Other" data-key="other" selected>Other</option>
+</select>
+<label for="url">URL <span class="opt">(optional)</span></label>
+<input id="url" name="url" type="url" inputmode="url" placeholder="https://">
+<label for="message">Message</label>
+<textarea id="message" name="message" required></textarea>
+<div class="hp" aria-hidden="true"><label for="_gotcha">Leave this field empty</label><input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+<input type="hidden" id="_subject" name="_subject" value="bryanfangman.com contact: Other">
+<button class="btn" type="submit">Send</button>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+</form>
+</section>
+</main>
+<footer>© 2026 Bryan Fangman · <a href="/">Home</a> · <a href="/links/">Links</a></footer>
+<script>
+(function(){
+var f=document.getElementById('contact-form'),r=document.getElementById('reason'),s=document.getElementById('_subject'),st=document.getElementById('status');
+var k=new URLSearchParams(location.search).get('reason');
+if(k){for(var i=0;i<r.options.length;i++){if(r.options[i].dataset.key===k.toLowerCase()){r.selectedIndex=i;}}}
+function sub(){s.value='bryanfangman.com contact: '+r.value;}
+r.addEventListener('change',sub);sub();
+f.addEventListener('submit',function(e){
+e.preventDefault();sub();st.textContent='Sending…';
+fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(res){
+if(res.ok){f.reset();sub();st.textContent='Thanks! Your message was sent.';}
+else{st.textContent='Sorry, something went wrong. Please try again later.';}
+}).catch(function(){st.textContent='Sorry, something went wrong. Please try again later.';});
+});
+})();
+</script>
+</body>
+</html>
